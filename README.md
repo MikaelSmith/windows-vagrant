@@ -27,3 +27,18 @@ For example, to update an existing box run
 ```
 env DEVENV=true vagrant provision
 ```
+
+## Windows Updates
+
+https://docs.microsoft.com/en-us/windows-server/administration/server-core/server-core-servicing
+
+Run `wmic qfe list` to list available updates.
+
+Enable automatic updates
+```
+cd C:\Windows\system32
+net stop wuauserv
+cscript scregedit.wsf /AU 4
+net start wuauserv
+Wuauclt /detectnow
+```
